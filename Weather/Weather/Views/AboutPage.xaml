@@ -5,7 +5,7 @@
              Title="About Weather">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+        <Frame BackgroundColor="#F321B9" Padding="24" CornerRadius="0">
             <Label Text="Project Part B" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Label Text="Weather in Xamarin.Forms" FontSize="Title" Padding="30,10,30,10"/>
@@ -16,7 +16,7 @@
             <Label.FormattedText>
                 <FormattedString>
                     <FormattedString.Spans>
-                        <Span Text="Created by Martin Lenart"/>
+                        <Span Text="Created by Sophie Lindström"/>
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>

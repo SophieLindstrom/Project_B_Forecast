@@ -43,6 +43,18 @@ namespace Weather.Views
         private async Task LoadForecast()
         {
             //Heare you load the forecast 
+            await Task.Run(() =>
+            {
+
+                Task<Forecast> t1 = service.GetForecastAsync(Title);
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    //t1.Result.Items.ForEach(x => x.Icon = null);
+                    WeatherListView.ItemsSource = t1.Result.Items;
+
+
+                });
+            });
         }
     }
 }

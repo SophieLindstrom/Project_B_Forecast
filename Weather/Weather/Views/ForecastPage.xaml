@@ -2,9 +2,44 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weather.Views.ForecastPage">
+    
+    
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label>Your code to present the weather data for example in a ListView</Label>
+
+        <StackLayout BackgroundColor="#2CD200">
+            <Label>xxxxxxxx</Label>
+            <ListView x:Name= "WeatherListView">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical"
+                                BackgroundColor="Aquamarine"
+                               
+                                Padding="5"
+                                Margin="0,0,0,5">
+
+                                <Label Text="{Binding DateTime, StringFormat='{0:ddd HH\\:mm}'}"
+                                      TextColor="Black"
+                                      FontSize="Medium"
+                                      VerticalOptions="Center"
+                                      Margin="20,0"/>
+                                <Label Text="{Binding Temperature}"/>
+
+
+
+
+
+
+
+                            </StackLayout>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                    
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
+        
     </ContentPage.Content>
 </ContentPage>
