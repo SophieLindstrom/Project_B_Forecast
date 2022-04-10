@@ -5,10 +5,11 @@
              Title="About Weather">
 
     <StackLayout>
+        
         <Frame BackgroundColor="#F321B9" Padding="24" CornerRadius="0">
             <Label Text="Project Part B" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
-        <Label Text="Weather in Xamarin.Forms" FontSize="Title" Padding="30,10,30,10"/>
+        <Label Text="Weather Forecast" FontSize="Title" Padding="30,10,30,10"/>
         <Label Text="This part of the project is about making a simple UI in to the console weather service made in project part A using Flyout." 
                FontSize="16" Padding="30,0,30,0"/>
         <Label Text="Select a city and give it a try!" FontSize="16" Padding="30,0,30,0"/>
@@ -21,6 +22,9 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
+        <Image x:Name="sunnyGif" Source="sunnyGif" 
+                  VerticalOptions="End" HorizontalOptions="End"></Image>
     </StackLayout>
+    
 
 </ContentPage>
