@@ -16,14 +16,15 @@ namespace Weather.Services
     {
         public EventHandler<string> WeatherForecastAvailable;
         HttpClient httpClient = new HttpClient();
-        readonly string apiKey = "03ca866006a2319edcd9062173e64a7c"; // Your API Key
+        readonly string apiKey = "9516011d36968c6458853eec14a51b3f"; // Your API Key
 
         //part of your event code here
         public async Task<Forecast> GetForecastAsync(string City)
         {
             //https://openweathermap.org/current
             var language = System.Globalization.CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
-            var uri = $"https://api.openweathermap.org/data/2.5/forecast?q={City}&units=metric&lang={language}&appid={apiKey}";
+           var uri = $"https://api.openweathermap.org/data/2.5/forecast?q={City}&units=metric&lang={language}&appid={apiKey}";
+           //var uri = $"http://maps.openweathermap.org/maps/2.0/weather/TA2/{City}?date=1527811200&opacity=0.9&fill_bound=true&palette=0:FF0000;10:00FF00;20:0000FF&appid={apiKey}";
 
             Forecast forecast = await ReadWebApiAsync(uri);
 
@@ -82,6 +83,7 @@ namespace Weather.Services
             item.Temperature = wdListItem.main.temp;
             item.Description = wdListItem.weather.Count > 0 ? wdListItem.weather.First().description : "No info";
             item.WindSpeed = wdListItem.wind.speed;
+            item.Icon = wdListItem.weather.Count > 0 ? wdListItem.weather.First().icon : "No info";
 
             return item;
         }

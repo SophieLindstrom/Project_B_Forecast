@@ -9,7 +9,8 @@ namespace Weather.Models
         public double WindSpeed { get; set; }
         public string Description { get; set; }
         public string Icon { get; set; }
+       
 
-        public override string ToString() => $"{Description}, temperature: {Temperature} degC, wind: {WindSpeed} m/s";
+        public override string ToString() => $"{Description}, temperature: {Temperature} degC, wind: {WindSpeed} m/s" ;
     }
 }

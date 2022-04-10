@@ -49,12 +49,17 @@ namespace Weather.Views
                 Task<Forecast> t1 = service.GetForecastAsync(Title);
                 Device.BeginInvokeOnMainThread(() =>
                 {
-                    //t1.Result.Items.ForEach(x => x.Icon = null);
+                    t1.Result.Items.ForEach(x => x.Icon = $"http://openweathermap.org/img/wn/{x.Icon}@2x.png");
                     WeatherListView.ItemsSource = t1.Result.Items;
-
+                    //t1.Result.Items.ForEach(x => x.Icon = $"https://www.flaticon.com/free-icon/weather_1555512{x.Icon}");
 
                 });
             });
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            ((Button)sender).Text = "";
         }
     }
 }

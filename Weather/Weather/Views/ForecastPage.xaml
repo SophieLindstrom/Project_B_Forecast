@@ -2,29 +2,49 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weather.Views.ForecastPage">
-    
+   
     
     
     <ContentPage.Content>
 
-        <StackLayout BackgroundColor="#2CD200">
-            <Label>xxxxxxxx</Label>
+        <StackLayout BackgroundColor="White">
+
             <ListView x:Name= "WeatherListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Orientation="Vertical"
-                                BackgroundColor="Aquamarine"
+                                BackgroundColor="#FFB6DF"
                                
                                 Padding="5"
                                 Margin="0,0,0,5">
+                                <Button Text="Refresh" Clicked="Button_Clicked" />
 
-                                <Label Text="{Binding DateTime, StringFormat='{0:ddd HH\\:mm}'}"
-                                      TextColor="Black"
+                                <Label Text="{Binding DateTime, StringFormat='{0:dddd, dd MMMM yyyy}'}"
+
+                                TextColor="Black"
                                       FontSize="Medium"
                                       VerticalOptions="Center"
                                       Margin="20,0"/>
-                                <Label Text="{Binding Temperature}"/>
+                                <Label Text="{Binding DateTime, StringFormat='{0:h:mm tt}'}"></Label>
+
+                                <Label Text="{Binding .}"/>
+
+
+                                <StackLayout Grid.Column="3" 
+                                             Orientation="Horizontal" 
+                                             Margin="20,0" 
+                                             HorizontalOptions="Center" 
+                                             VerticalOptions="Center">
+
+                                    <Image Source="{Binding Icon}" 
+                                           VerticalOptions="CenterAndExpand" 
+                                           HorizontalOptions="CenterAndExpand"
+                                           />
+
+                                </StackLayout>
+
+
 
 
 
@@ -33,13 +53,13 @@
 
 
                             </StackLayout>
-                            
+
                         </ViewCell>
                     </DataTemplate>
-                    
+
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        
+
     </ContentPage.Content>
 </ContentPage>
