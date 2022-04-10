@@ -57,9 +57,19 @@ namespace Weather.Views
             });
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void refresh(object sender, EventArgs args)
         {
-            ((Button)sender).Text = "";
+            await Task.Run(() =>
+            {
+                Task<Forecast> t1 = service.GetForecastAsync(Title);
+                Device.BeginInvokeOnMainThread(() =>
+                {
+                    t1.Result.Items.ForEach(x => x.Icon = $"http://openweathermap.org/img/wn/{x.Icon}@2x.png");
+                    WeatherListView.ItemsSource = t1.Result.Items;
+                    //t1.Result.Items.ForEach(x => x.Icon = $"https://www.flaticon.com/free-icon/weather_1555512{x.Icon}");
+
+                });
+            });
         }
     }
 }
