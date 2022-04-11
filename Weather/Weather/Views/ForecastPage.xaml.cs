@@ -11,9 +11,22 @@ using Xamarin.Forms.Xaml;
 
 using Weather.Models;
 using Weather.Services;
+using System.Globalization;
 
 namespace Weather.Views
 {
+    //class DateConverter
+    //{
+    //    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    //    {
+    //        DateTime date = (DateTime)value;
+    //        if (date.Equals(DateTime.Today))
+    //        {
+    //            return "Today";
+    //        }
+    //        return date.Day.ToString().PadLeft(2, '0') + @"/" + date.Month.ToString().PadLeft(2, '0') + "-" + date.Year;
+    //    }
+    //}
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
     public partial class ForecastPage : ContentPage
@@ -43,33 +56,36 @@ namespace Weather.Views
         private async Task LoadForecast()
         {
             //Heare you load the forecast 
-            await Task.Run(() =>
-            {
+            
 
-                Task<Forecast> t1 = service.GetForecastAsync(Title);
-                Device.BeginInvokeOnMainThread(() =>
+                Forecast t1 = await service.GetForecastAsync(Title);
+                
                 {
-                    t1.Result.Items.ForEach(x => x.Icon = $"http://openweathermap.org/img/wn/{x.Icon}@2x.png");
-                    WeatherListView.ItemsSource = t1.Result.Items;
-                    //t1.Result.Items.ForEach(x => x.Icon = $"https://www.flaticon.com/free-icon/weather_1555512{x.Icon}");
+                    
+                    t1.Items.ForEach(x => x.Icon = $"http://openweathermap.org/img/wn/{x.Icon}@2x.png");
+                    
 
-                });
-            });
+                    WeatherListView.ItemsSource = t1.Items.GroupBy(x => x.DateTime.Date);
+                //WeatherListView.ItemsSource = groupedforecast.Items;
+
+                   
+                    
+                   // t1.Result.Items.ForEach(x => x.Icon = $"http://openweathermap.org/img/wn/{x.Icon}@2x.png");
+
+
+                    
+
+                };
+            
         }
 
         private async void refresh(object sender, EventArgs args)
         {
-            await Task.Run(() =>
-            {
-                Task<Forecast> t1 = service.GetForecastAsync(Title);
-                Device.BeginInvokeOnMainThread(() =>
-                {
-                    t1.Result.Items.ForEach(x => x.Icon = $"http://openweathermap.org/img/wn/{x.Icon}@2x.png");
-                    WeatherListView.ItemsSource = t1.Result.Items;
-                    //t1.Result.Items.ForEach(x => x.Icon = $"https://www.flaticon.com/free-icon/weather_1555512{x.Icon}");
-
-                });
-            });
+            
+            
+               await LoadForecast();
+           
         }
+        
     }
 }

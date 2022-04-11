@@ -3,14 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weather.Views.AboutPage"
              Title="About Weather">
-
-    <StackLayout>
+    <AbsoluteLayout>
+        <Image AbsoluteLayout.LayoutBounds="0,0,915,1050" x:Name="sunnyGif" Source="sunnyGif" 
+                  ></Image>
+        <StackLayout>
         
-        <Frame BackgroundColor="#F321B9" Padding="24" CornerRadius="0">
-            <Label Text="Project Part B" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        <Frame BackgroundColor="#21F38D" Padding="24" CornerRadius="0">
+            <Label Text="Project Part B - Weather Forecast" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Label Text="Weather Forecast" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="This part of the project is about making a simple UI in to the console weather service made in project part A using Flyout." 
+        <Label Text="This is an excellent weather application." TextColor="White"
                FontSize="16" Padding="30,0,30,0"/>
         <Label Text="Select a city and give it a try!" FontSize="16" Padding="30,0,30,0"/>
         <Label FontSize="16" Padding="30,24,30,0">
@@ -22,9 +24,8 @@
                 </FormattedString>
             </Label.FormattedText>
         </Label>
-        <Image x:Name="sunnyGif" Source="sunnyGif" 
-                  VerticalOptions="End" HorizontalOptions="End"></Image>
+        
     </StackLayout>
-    
+    </AbsoluteLayout>
 
 </ContentPage>
