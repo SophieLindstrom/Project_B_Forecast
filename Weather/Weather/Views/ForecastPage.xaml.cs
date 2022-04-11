@@ -15,18 +15,7 @@ using System.Globalization;
 
 namespace Weather.Views
 {
-    //class DateConverter
-    //{
-    //    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-    //    {
-    //        DateTime date = (DateTime)value;
-    //        if (date.Equals(DateTime.Today))
-    //        {
-    //            return "Today";
-    //        }
-    //        return date.Day.ToString().PadLeft(2, '0') + @"/" + date.Month.ToString().PadLeft(2, '0') + "-" + date.Year;
-    //    }
-    //}
+    
     [XamlCompilation(XamlCompilationOptions.Compile)]
 
     public partial class ForecastPage : ContentPage
@@ -66,11 +55,11 @@ namespace Weather.Views
                     
 
                     WeatherListView.ItemsSource = t1.Items.GroupBy(x => x.DateTime.Date);
-                //WeatherListView.ItemsSource = groupedforecast.Items;
+                
 
                    
                     
-                   // t1.Result.Items.ForEach(x => x.Icon = $"http://openweathermap.org/img/wn/{x.Icon}@2x.png");
+                  
 
 
                     
