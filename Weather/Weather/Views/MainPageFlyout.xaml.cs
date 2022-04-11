@@ -36,10 +36,12 @@ namespace Weather.Views
                     new MainPageFlyoutMenuItem { Id = 0, Title = "About Weather", TargetType=typeof(AboutPage) },
                     new MainPageFlyoutMenuItem { Id = 1, Title = "Debug Console", TargetType=typeof(ConsolePage) },
                     new MainPageFlyoutMenuItem { Id = 2, Title = "Stockholm", TargetType=typeof(ForecastPage) },
-                    new MainPageFlyoutMenuItem { Id = 3, Title = "Uppsala", TargetType=typeof(ForecastPage) },
+                    new MainPageFlyoutMenuItem { Id = 3, Title = "Lund", TargetType=typeof(ForecastPage) },
                     new MainPageFlyoutMenuItem { Id = 4, Title = "New York", TargetType=typeof(ForecastPage) },
                     new MainPageFlyoutMenuItem { Id = 5, Title = "Bangkok", TargetType=typeof(ForecastPage) },
                     new MainPageFlyoutMenuItem { Id = 6, Title = "Rio", TargetType=typeof(ForecastPage) },
+                    new MainPageFlyoutMenuItem { Id = 7, Title = "Sydney", TargetType=typeof(ForecastPage) },
+                    new MainPageFlyoutMenuItem { Id = 8, Title = "Kairo", TargetType=typeof(ForecastPage) },
                 });
                 
             }

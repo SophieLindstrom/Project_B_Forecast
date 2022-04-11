@@ -4,8 +4,11 @@
              x:Class="Weather.Views.AboutPage"
              Title="About Weather">
     <AbsoluteLayout>
-        <Image AbsoluteLayout.LayoutBounds="0,0,915,1050" x:Name="sunnyGif" Source="sunnyGif" 
+        <Image AbsoluteLayout.LayoutBounds="0,0,915,1050" x:Name="skyscraper" Source="skyscraper" 
                   ></Image>
+    <!-- <AbsoluteLayout>
+        <Image AbsoluteLayout.LayoutBounds="0,0,915,1050" x:Name="sunnyGif" Source="sunnyGif" 
+                  ></Image> -->
         <StackLayout>
         
         <Frame BackgroundColor="#21F38D" Padding="24" CornerRadius="0">

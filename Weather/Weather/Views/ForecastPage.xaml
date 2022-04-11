@@ -9,18 +9,26 @@
 
   
 
-        <StackLayout BackgroundColor="Blue">
-            <Button Text="Refresh"
+        <StackLayout BackgroundColor="White">
+            <Button Text="New weather forecast"
                     Clicked="refresh"/>
+        <Image 
+            Aspect="Fill"
+            HeightRequest="300"
+            VerticalOptions="StartAndExpand"
+            BackgroundColor="Black"
+            Opacity="1"
+            
+            x:Name="backgroundPic"/>
 
-            <ListView x:Name= "WeatherListView"
+        <ListView x:Name= "WeatherListView"
                       IsGroupingEnabled="True"
                       HasUnevenRows="True">
                 
                 <ListView.GroupHeaderTemplate>
                     <DataTemplate>
                         <ViewCell 
-                            Height="40">
+                            Height="30">
 
                             <StackLayout
                             HorizontalOptions="FillAndExpand"
@@ -55,7 +63,10 @@
                                     
 
                                 
-                                <Label Text="{Binding DateTime, StringFormat='{0:h:mm tt}'}"></Label>
+                                <Label
+                                    FontSize="20"
+                                    TextColor="Black"
+                                    Text="{Binding DateTime, StringFormat='{0:h:mm tt}'}"></Label>
 
                                 <Label Text="{Binding .}"/>
 
