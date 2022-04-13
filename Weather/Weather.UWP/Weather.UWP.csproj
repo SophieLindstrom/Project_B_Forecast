@@ -132,9 +132,15 @@
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
     <Content Include="Assets\Wide310x150Logo.scale-400.png" />
     <Content Include="Bangkok.png" />
+    <Content Include="Hong Kong.png" />
+    <Content Include="Kuala Lumpur.png" />
     <Content Include="New York.png" />
     <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Seoul.png" />
+    <Content Include="Shanghai.png" />
+    <Content Include="Singapore.png" />
     <Content Include="Stockholm.png" />
+    <Content Include="Tokyo.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
