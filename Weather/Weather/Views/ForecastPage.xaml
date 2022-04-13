@@ -16,12 +16,11 @@
 
             <Image 
 				Aspect="AspectFill"
-				
 				VerticalOptions="End"
 					HorizontalOptions="Fill"
 				BackgroundColor="Black"
 				Opacity="1"
-				HeightRequest="200"
+				HeightRequest="250"
 				x:Name="backgroundPic">
             </Image>
 
@@ -29,7 +28,10 @@
                 <Label VerticalOptions="CenterAndExpand"  HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="35" x:Name="headerTitle"></Label>
             </StackLayout>
 
-            <Button HorizontalOptions="End" BackgroundColor="Beige" VerticalOptions="Center" Margin="0,0,10,0" CornerRadius="10" Text="Refresh forecast" Clicked="refresh"/>
+            <Button HorizontalOptions="End" BackgroundColor="Black" Opacity="0.7" BorderColor="White" BorderWidth="2"
+                    VerticalOptions="Start" Margin="10" Padding="7" CornerRadius="10"  
+                    Text="Refresh forecast" FontSize="Micro" FontAttributes="Bold" 
+                    TextColor="Pink" Clicked="refresh"/>
 
         </Grid>
 
@@ -52,6 +54,7 @@
 							VerticalOptions="FillAndExpand"
 								FontSize="20"
 								TextColor="Gray"
+                                
 					
 							
 								Text="{Binding Key, StringFormat='{0:dddd, dd MMMM yyyy}'}"/>
@@ -70,6 +73,7 @@
                             HorizontalOptions="FillAndExpand" BackgroundColor="#FFE4E8"
 											 Padding="15"
 											 Margin="10"
+                               
                             
                             IsClippedToBounds="True"
                           >
