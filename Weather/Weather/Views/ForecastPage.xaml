@@ -1,103 +1,147 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:Weather.Views"
-             x:Class="Weather.Views.ForecastPage">
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 xmlns:local="clr-namespace:Weather.Views"
+			 x:Class="Weather.Views.ForecastPage">
 
 
-            
+    <StackLayout BackgroundColor="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
 
-  
+            <Image 
+				Aspect="AspectFill"
+				
+				VerticalOptions="End"
+					HorizontalOptions="Fill"
+				BackgroundColor="Black"
+				Opacity="1"
+				HeightRequest="200"
+				x:Name="backgroundPic">
+            </Image>
 
-        <StackLayout BackgroundColor="White">
-            <Button Text="New weather forecast"
-                    Clicked="refresh"/>
-        <Image 
-            Aspect="Fill"
-            HeightRequest="300"
-            VerticalOptions="StartAndExpand"
-            BackgroundColor="Black"
-            Opacity="1"
-            
-            x:Name="backgroundPic"/>
+            <StackLayout VerticalOptions="FillAndExpand" BackgroundColor="#35000000" HorizontalOptions="FillAndExpand">
+                <Label VerticalOptions="CenterAndExpand"  HorizontalOptions="Center" TextColor="White" FontAttributes="Bold" FontSize="35" x:Name="headerTitle"></Label>
+            </StackLayout>
+
+            <Button HorizontalOptions="End" BackgroundColor="Beige" VerticalOptions="Center" Margin="0,0,10,0" CornerRadius="10" Text="Refresh forecast" Clicked="refresh"/>
+
+        </Grid>
 
         <ListView x:Name= "WeatherListView"
-                      IsGroupingEnabled="True"
-                      HasUnevenRows="True">
-                
-                <ListView.GroupHeaderTemplate>
-                    <DataTemplate>
-                        <ViewCell 
-                            Height="30">
+					  IsGroupingEnabled="True"
+                        HasUnevenRows="True">
 
-                            <StackLayout
+            <ListView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <ViewCell>
+
+                        <StackLayout
+							HorizontalOptions="FillAndExpand"
+							VerticalOptions="FillAndExpand"
+							BackgroundColor="Transparent"
+							Padding="5,25,5,5">
+
+                            <Label
                             HorizontalOptions="FillAndExpand"
-                            HeightRequest="40"
-                            BackgroundColor="LightGray"
-                            Padding="5"
-                            Orientation="Horizontal">
+							VerticalOptions="FillAndExpand"
+								FontSize="20"
+								TextColor="Gray"
+					
+							
+								Text="{Binding Key, StringFormat='{0:dddd, dd MMMM yyyy}'}"/>
 
-                                <Label
+                        </StackLayout>
 
-                                FontSize="20"
-                                TextColor="Black"
-                                VerticalOptions="Center"
-                                FontAttributes="Bold"
-                                Text="{Binding Key, StringFormat='{0:dddd, dd MMMM yyyy}'}"/>
+                    </ViewCell>
+                </DataTemplate>
 
-                            </StackLayout>
+            </ListView.GroupHeaderTemplate>
 
-                        </ViewCell>
-                    </DataTemplate>
-                        
-                </ListView.GroupHeaderTemplate>
-                     
-                <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Vertical"
-                                            BackgroundColor="LightPink"
-                                             Padding="5"
-                                             Margin="0,0,0,5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame CornerRadius="5" 
+                            HorizontalOptions="FillAndExpand" BackgroundColor="#FFE4E8"
+											 Padding="15"
+											 Margin="10"
+                            
+                            IsClippedToBounds="True"
+                          >
+                            <StackLayout HorizontalOptions="FillAndExpand">
+                                <StackLayout
+                                      HorizontalOptions="StartAndExpand">
 
-                                    
-
-                                
-                                <Label
-                                    FontSize="20"
-                                    TextColor="Black"
-                                    Text="{Binding DateTime, StringFormat='{0:h:mm tt}'}"></Label>
-
-                                <Label Text="{Binding .}"/>
-
-
-                                    <StackLayout Grid.Column="3" 
-                                             Orientation="Horizontal" 
-                                             Margin="20,0" 
-                                             HorizontalOptions="Center" 
-                                             VerticalOptions="Center">
-
-                                        <Image Source="{Binding Icon}" 
-                                           VerticalOptions="Center" 
-                                           HorizontalOptions="EndAndExpand"
-                                           />
-                                    </StackLayout>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.3*" />
+                                            <ColumnDefinition Width="0.3*" />
+                                            <ColumnDefinition Width="0.4*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
 
 
 
+                                        <Image Grid.Column="0"  Source="{Binding Icon}" 
+										   VerticalOptions="Center" 
+										   HorizontalOptions="Start"
+										   />
+
+
+                                        <Label
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="Center"    
+                                    Grid.Column="1"
+									FontSize="25"
+									TextColor="DarkGray"
+									Text="{Binding DateTime, StringFormat='{0:h:mm tt}'}"></Label>
+
+                                        <Label
+                                    HorizontalOptions="EndAndExpand"
+                                    VerticalOptions="Center"
+                                    Grid.Column="2"
+									FontSize="25"
+									TextColor="Black"
+									Text="{Binding Temperature, StringFormat='{0:N} °C'}"></Label>
+                                    </Grid>
                                 </StackLayout>
-                            </ViewCell>
+                                <StackLayout>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="0.5*" />
+                                            <ColumnDefinition Width="0.5*" />
+                                            
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition/>
+                                        </Grid.RowDefinitions>
+                                        
+                                        
+                                        <Label Text="{Binding Description }" />
+                                        <Label HorizontalTextAlignment="End" Text="{Binding WindSpeed, StringFormat='Windspeed: {0:N} m/s'}" Grid.Column="1"/>
+                                        </Grid>
+                                </StackLayout>
+                            </StackLayout>
+                        </Frame>
+                    </ViewCell>
 
-                        </DataTemplate>
+                </DataTemplate>
 
-                    </ListView.ItemTemplate>
-                
+            </ListView.ItemTemplate>
 
-            </ListView>
 
-        </StackLayout>
+        </ListView>
 
-    
- 
+    </StackLayout>
+
+
+
 
 </ContentPage>

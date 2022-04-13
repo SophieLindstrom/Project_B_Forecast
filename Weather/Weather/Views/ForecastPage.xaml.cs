@@ -56,7 +56,7 @@ namespace Weather.Views
 
                     WeatherListView.ItemsSource = t1.Items.GroupBy(x => x.DateTime.Date);
                     backgroundPic.Source = $"{ Title}.png";
-                    
+                    headerTitle.Text = Title;
 
                 };
             

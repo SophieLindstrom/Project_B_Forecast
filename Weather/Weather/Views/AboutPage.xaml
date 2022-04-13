@@ -3,32 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weather.Views.AboutPage"
              Title="About Weather">
-    <AbsoluteLayout>
-        <Image AbsoluteLayout.LayoutBounds="0,0,915,1050" x:Name="skyscraper" Source="skyscraper" 
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="Black">
+
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <Image Aspect="AspectFill" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="skyscraper" Source="skyscraper" 
                   ></Image>
-    <!-- <AbsoluteLayout>
-        <Image AbsoluteLayout.LayoutBounds="0,0,915,1050" x:Name="sunnyGif" Source="sunnyGif" 
-                  ></Image> -->
-        <StackLayout>
-        
-        <Frame BackgroundColor="#21F38D" Padding="24" CornerRadius="0">
-            <Label Text="Project Part B - Weather Forecast" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
-        </Frame>
-        <Label Text="Weather Forecast" FontSize="Title" Padding="30,10,30,10"/>
-        <Label Text="This is an excellent weather application." TextColor="White"
+
+            <StackLayout HorizontalOptions="FillAndExpand">
+
+                <Frame Padding="24" CornerRadius="0" HorizontalOptions="FillAndExpand" >
+                    <Label Text="Project Part B - Weather Forecast" HorizontalTextAlignment="Start" TextColor="White" FontSize="36"/>
+                </Frame>
+                <Label Text="Weather Forecast" FontSize="Title" Padding="30,10,30,10"/>
+                <Label Text="This is an excellent weather application." TextColor="White"
                FontSize="16" Padding="30,0,30,0"/>
-        <Label Text="Select a city and give it a try!" FontSize="16" Padding="30,0,30,0"/>
-        <Label FontSize="16" Padding="30,24,30,0">
-            <Label.FormattedText>
-                <FormattedString>
-                    <FormattedString.Spans>
-                        <Span Text="Created by Sophie Lindström"/>
-                    </FormattedString.Spans>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        
+                <Label Text="Select a city and give it a try!" FontSize="16" Padding="30,0,30,0"/>
+                <Label FontSize="16" Padding="30,24,30,0">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <FormattedString.Spans>
+                                <Span Text="Created by Sophie Lindström" TextColor="LightPink" FontAttributes="Bold" />
+                            </FormattedString.Spans>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+
+            </StackLayout>
+        </Grid>
     </StackLayout>
-    </AbsoluteLayout>
 
 </ContentPage>
