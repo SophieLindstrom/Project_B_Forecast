@@ -14,18 +14,15 @@
                 <Frame Padding="24" CornerRadius="0" HorizontalOptions="FillAndExpand" >
                     <Label Text="Project Part B - Weather Forecast" HorizontalTextAlignment="Start" TextColor="White" FontSize="36"/>
                 </Frame>
-                <Label Text="Weather Forecast" FontSize="Title" Padding="30,10,30,10"/>
-                <Label Text="This is an excellent weather application." TextColor="White"
-               FontSize="16" Padding="30,0,30,0"/>
-                <Label Text="Select a city and give it a try!" FontSize="16" Padding="30,0,30,0"/>
-                <Label FontSize="16" Padding="30,24,30,0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <FormattedString.Spans>
-                                <Span Text="Created by Sophie Lindström" TextColor="LightPink" FontAttributes="Bold" />
-                            </FormattedString.Spans>
-                        </FormattedString>
-                    </Label.FormattedText>
+                
+                
+                <Label Text="Select a city and give it a try!" TextColor="LightPink" 
+               FontSize="20" Padding="30,0,30,0"/>
+
+                <Label FontSize="16" FontAttributes="Bold" Padding="20, 10, 10, 20" Margin="20, 10, 10, 20" 
+                       HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" 
+                       Text="Created by Sophie Lindström" TextColor="LightPink">
+                    
                 </Label>
 
             </StackLayout>
